@@ -51,7 +51,7 @@ public class VingadorController {
 
 		} else {
 
-			response = ResponseEntity.notFound().build();
+			response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("msg: Lista vázia !");
 		}
 
 		return response;

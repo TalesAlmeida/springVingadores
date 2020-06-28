@@ -36,9 +36,19 @@ public class VingadorRepository {
 
 	public int add(Vingador vingador) {
 
-		vingador.setId(buscaUltimoIdInserido() + 1);
+		System.out.println("Lista is Empty: " + vingadores.isEmpty());
+		if (vingadores.isEmpty()) {
 
-		this.vingadores.add(vingador);
+			vingador.setId(1);
+
+			this.vingadores.add(vingador);
+
+		} else {
+			vingador.setId(buscaUltimoIdInserido() + 1);
+
+			this.vingadores.add(vingador);
+
+		}
 
 		return buscaUltimoIdInserido();
 	}
